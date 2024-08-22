@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PattaTravels - List your vehicle for free and promote it easily on our site.">
+    <title>PattaTravels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures body takes up full viewport height */
+        }
+        header {
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            color: #fff;
+            text-align: center; /* Center text within the items */
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar .icon-button {
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 0;
+            transition: color 0.3s;
+            margin-left: 20px; /* Space between buttons */
+        }
+        .navbar .icon-button:hover {
+            color: #ddd;
+        }
+        .ad-section {
+            background-color: #f0f0f0; /* Light ash color */
+            color: #333;
+            text-align: center;
+            padding: 50px 20px; /* Adjusted padding for appropriate height */
+            border-top: 5px solid #333;
+        }
+        .ad-section h2 {
+            margin: 0;
+            font-size: 28px; /* Font size for the heading */
+            font-weight: bold;
+        }
+        .ad-section p {
+            font-size: 18px; /* Font size for the paragraph */
+            margin: 20px 0 30px; /* Added bottom margin for spacing */
+            max-width: 700px; /* Max width for better text line length */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 15px 25px; /* Padding for the button */
+            font-size: 18px; /* Font size for the button text */
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        .find-vehicle-section {
+            background-color: #f9f9f9; /* Light background color */
+            padding: 20px 15px; /* Adjusted padding */
+            text-align: center;
+        }
+        .find-vehicle-section h2 {
+            font-size: 28px;
+            margin: 10px 0; /* Reduced top and bottom margins */
+        }
+        .dropdown-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .dropdown-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .dropdown-container select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px; /* Reduced bottom margin */
+        }
+        .hidden {
+            display: none;
+        }
+        .vehicle-card-section {
+            padding: 20px;
+            background-color: #ffffff; /* Separate background color for vehicle cards */
+        }
+        .vehicle-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between cards */
+            justify-content: center; /* Center the cards horizontally */
+        }
+        .vehicle-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: calc(25% - 20px); /* 4 cards per row on desktop */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .vehicle-card img {
+            width: 240px;
+            height: 170px;
+        }
+        .vehicle-card-content {
+            padding: 15px;
+            text-align: center; /* Centering details */
+        }
+        .vehicle-card-content h3 {
+            margin: 0 0 10px; /* Margin below heading */
+            font-size: 20px;
+        }
+        .vehicle-card-content p {
+            margin: 5px 0;
+        }
+        .call-now-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+        .call-now-button:hover {
+            background-color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .vehicle-card {
+                width: calc(100% - 20px); /* 1 card per row on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h1>PattaTravels.com</h1>
+            <!-- Home and Account buttons removed -->
+        </nav>
+    </header>
+
+    <main>
+        <section class="ad-section">
+            <h2>List Your Vehicle for Free!</h2>
+            <p>Promote your vehicle on our site at no cost. It’s quick and easy—just click below to get started!</p>
+            <a href="https://forms.gle/xRAYFb318muish4S8" class="cta-button" target="_blank" rel="noopener noreferrer">List Your Vehicle</a>
+        </section>
+
+        <section class="find-vehicle-section">
+            <h2>Find Your Vehicle</h2>
+            <div class="dropdown-container">
+                <label for="vehicle-type">Vehicle Type</label>
+                <select id="vehicle-type" name="vehicle-type">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+
+                <div id="province-container" class="hidden">
+                    <label for="province">Province</label>
+                    <select id="province" name="province">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div id="district-container" class="hidden">
+                    <label for="district">District</label>
+                    <select id="district" name="district">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div id="city-container" class="hidden">
+                    <label for="city">City</label>
+                    <select id="city" name="city">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="vehicle-card-section">
+            <div class="vehicle-card-container">
+                <div class="vehicle-card" data-vehicle-type="Car" data-province="Province 1" data-district="District 1" data-city="City 1">
+                    <div class="vehicle-card-content">
+                        <h3>Car</h3>
+                        <img src="https://i.imgur.com/A3I7EpK.jpeg" alt="Sample Vehicle">
+                        <p><strong>Province:</strong> Province 1</p>
+                        <p><strong>District:</strong> District 1</p>
+                        <p><strong>City:</strong> City 1</p>
+                        <p><strong>Driver:</strong> John Doe</p>
+                        <a href="tel:+1234567890" class="call-now-button" aria-label="Call Now">Call Now</a>
+                    </div>
+                </div>
+                <div class="vehicle-card" data-vehicle-type="Bike" data-province="Province 2" data-district="District 2" data-city="City 2">
+                    <div class="vehicle-card-content">
+                        <h3>Bike</h3>
+                        <img src="https://i.imgur.com/EtbVQ7j.jpeg" alt="Sample Vehicle">
+                        <p><strong>Province:</strong> Province 2</p>
+                        <p><strong>District:</strong> District 2</p>
+                        <p><strong>City:</strong> City 2</p>
+                        <p><strong>Driver:</strong> Jane Smith</p>
+                        <a href="tel:+0987654321" class="call-now-button" aria-label="Call Now">Call Now</a>
+                    </div>
+                </div>
+                <div class="vehicle-card" data-vehicle-type="Bike" data-province="Province 2" data-district="District 2" data-city="City 2">
+                    <div class="vehicle-card-content">
+                        <h3>Three wheel</h3>
+                        <img src="https://i.imgur.com/uAaQDi3.jpeg" alt="Sample Vehicle">
+                        <p><strong>Province:</strong> Province 2</p>
+                        <p><strong>District:</strong> District 2</p>
+                        <p><strong>City:</strong> City 2</p>
+                        <p><strong>Driver:</strong> Jane Smith</p>
+                        <a href="tel:+0987654321" class="call-now-button" aria-label="Call Now">Call Now</a>
+                    </div>
+                </div>
+                <div class="vehicle-card" data-vehicle-type="Bike" data-province="Province 2" data-district="District 2" data-city="City 2">
+                    <div class="vehicle-card-content">
+                        <h3>Van</h3>
+                        <img src="https://i.imgur.com/7nrph3o.jpeg" alt="Sample Vehicle">
+                        <p><strong>Province:</strong> Province 2</p>
+                        <p><strong>District:</strong> District 2</p>
+                        <p><strong>City:</strong> City 2</p>
+                        <p><strong>Driver:</strong> Jane Smith</p>
+                        <a href="tel:+0987654321" class="call-now-button" aria-label="Call Now">Call Now</a>
+                    </div>
+                </div>
+
+                <!-- Add more vehicle cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 PattaTravels. All rights reserved.</p>
+        <a href="Privacy_Policy.html">Privacy Policy</a> | <a href="Terms_of_Service.html">Terms of Service</a>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Sample data for dropdown options
+    const vehicleTypes = ["Bike", "Three Wheels", "Car", "Van"];
+    const provinces = [
+        "Western", "Central", "Southern", "Northern", "Eastern", 
+        "North Western", "North Central", "Uva", "Sabaragamuwa"
+    ];
+
+    const districts = {
+        "Western": {
+            "Colombo": ["Colombo", "Dehiwala-Mount Lavinia", "Kelaniya", "Kotte", "Fort", "Pettah", "Wellawatte", "Kollupitiya", "Bambalapitiya"],
+            "Gampaha": ["Gampaha", "Wattala", "Ja-Ela", "Minuwangoda", "Negombo"],
+            "Kalutara": ["Kalutara", "Beruwala", "Bentota", "Ratnapura", "Aluthgama", "Matugama"]
+        },
+        "Central": {
+            "Kandy": ["Kandy", "Peradeniya", "Mahaiyawa", "Nuwara Eliya", "Gampola", "Katugastota", "Madawala", "Pilimathalawa", "Digana"],
+            "Matale": ["Matale", "Dambulla", "Ukuwela", "Nalanda", "Rattota", "Hunnasgiriya", "Laggala", "Palapathwala"],
+            "Nuwara Eliya": ["Nuwara Eliya", "Hatton", "Bandarawela", "Ella", "Ohiya", "Talawakelle", "Ambewela", "Welimada"]
+        },
+        "Southern": {
+            "Galle": ["Galle", "Hikkaduwa", "Unawatuna", "Elpitiya", "Matara", "Ambalangoda", "Bentota", "Weligama"],
+            "Matara": ["Matara", "Mirissa", "Tangalle", "Devinuwara", "Dondra", "Weligama", "Hakmana", "Kamburupitiya"],
+            "Hambantota": ["Hambantota", "Tissamaharama", "Wellawaya", "Lunugamvehera", "Kataragama", "Kirinda", "Beliatta", "Ridiyagama"]
+        },
+        "Northern": {
+            "Jaffna": ["Jaffna", "Chavakachcheri", "Point Pedro", "Valvettithurai", "Nallur", "Tellippalai"],
+            "Kilinochchi": ["Kilinochchi", "Elephant Pass", "Poonakary", "Karachchi"],
+            "Mullaitivu": ["Mullaitivu", "Visuvamadu", "Oddusudan", "Puliyankulam"],
+            "Vavuniya": ["Vavuniya", "Chettikulam", "Omanthai", "Vavuniya North"]
+        },
+        "Eastern": {
+            "Batticaloa": ["Batticaloa", "Kalmunai", "Eravur", "Kallady", "Manmunaipattu"],
+            "Ampara": ["Ampara", "Akkaraipattu", "Kalmunai", "Panama", "Pottuvil"],
+            "Trincomalee": ["Trincomalee", "Kinniya", "Kuchchaveli", "Muttur", "Nilaveli"]
+        },
+        "Uva": {
+            "Badulla": ["Badulla", "Bandarawela", "Ella", "Haputale", "Haliela"],
+            "Monaragala": ["Monaragala", "Wellawaya", "Bibile", "Okkampitiya", "Siyambalanduwa"]
+        },
+        "North Western": {
+            "Kurunegala": ["Kurunegala", "Maho", "Dambadeniya", "Polgahawela", "Yapahuwa"],
+            "Puttalam": ["Puttalam", "Chilaw", "Anamaduwa", "Mundel", "Kottadiya"]
+        },
+        "North Central": {
+            "Anuradhapura": ["Anuradhapura", "Mihintale", "Palugaswewa", "Thambuththegama", "Kekirawa"],
+            "Polonnaruwa": ["Polonnaruwa", "Batticaloa", "Giritale", "Medirigiriya", "Hingurakgoda"]
+        },
+        "Sabaragamuwa": {
+            "Ratnapura": ["Ratnapura", "Kuruwita", "Elapatha", "Opanayaka", "Balangoda"],
+            "Kegalle": ["Kegalle", "Mawanella", "Rambukkana", "Deraniyagala", "Yatiyantota"]
+        }
+    };
+
+    // Function to populate dropdown options
+    function populateDropdown(selectElement, options) {
+        selectElement.innerHTML = '<option value="" disabled selected>Select</option>';
+        options.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option;
+            opt.textContent = option;
+            selectElement.appendChild(opt);
+        });
+    }
+
+    // Function to show/hide dropdowns based on selection
+    function showDropdowns() {
+        document.getElementById('province-container').classList.remove('hidden');
+        document.getElementById('district-container').classList.add('hidden');
+        document.getElementById('city-container').classList.add('hidden');
+    }
+
+    function showDistrictDropdown() {
+        document.getElementById('district-container').classList.remove('hidden');
+        document.getElementById('city-container').classList.add('hidden');
+    }
+
+    function showCityDropdown() {
+        document.getElementById('city-container').classList.remove('hidden');
+    }
+
+    // Event listeners for dropdown changes
+    const vehicleTypeSelect = document.getElementById('vehicle-type');
+    vehicleTypeSelect.addEventListener('change', function() {
+        showDropdowns();
+        populateDropdown(document.getElementById('province'), provinces);
+        filterVehicleCards();
+    });
+
+    const provinceSelect = document.getElementById('province');
+    provinceSelect.addEventListener('change', function() {
+        showDistrictDropdown();
+        const selectedProvince = this.value;
+        const districtsForProvince = Object.keys(districts[selectedProvince] || {});
+        populateDropdown(document.getElementById('district'), districtsForProvince);
+        filterVehicleCards();
+    });
+
+    const districtSelect = document.getElementById('district');
+    districtSelect.addEventListener('change', function() {
+        showCityDropdown();
+        const selectedProvince = document.getElementById('province').value;
+        const selectedDistrict = this.value;
+        const citiesForDistrict = districts[selectedProvince][selectedDistrict] || [];
+        populateDropdown(document.getElementById('city'), citiesForDistrict);
+        filterVehicleCards();
+    });
+
+    const citySelect = document.getElementById('city');
+    citySelect.addEventListener('change', filterVehicleCards);
+
+    // Function to filter vehicle cards based on selected options
+    function filterVehicleCards() {
+        const selectedVehicleType = vehicleTypeSelect.value;
+        const selectedProvince = document.getElementById('province').value;
+        const selectedDistrict = document.getElementById('district').value;
+        const selectedCity = document.getElementById('city').value;
+
+        const vehicleCards = document.querySelectorAll('.vehicle-card');
+
+        vehicleCards.forEach(card => {
+            const cardVehicleType = card.getAttribute('data-vehicle-type');
+            const cardProvince = card.getAttribute('data-province');
+            const cardDistrict = card.getAttribute('data-district');
+            const cardCity = card.getAttribute('data-city');
+
+            const isMatch = 
+                (!selectedVehicleType || cardVehicleType === selectedVehicleType) &&
+                (!selectedProvince || cardProvince === selectedProvince) &&
+                (!selectedDistrict || cardDistrict === selectedDistrict) &&
+                (!selectedCity || cardCity === selectedCity);
+
+            card.style.display = isMatch ? 'block' : 'none';
+        });
+    }
+
+    // Initial population of vehicle type dropdown
+    populateDropdown(vehicleTypeSelect, vehicleTypes);
+});
+
+    </script>
+</body>
+</html>
