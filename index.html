@@ -38,7 +38,6 @@
       display: block;
     }
 
-    /* Common styles for all inputs and selects */
     input, select {
       width: 100%;
       padding: 12px;
@@ -71,24 +70,6 @@
       align-items: center;
     }
 
-    /* Styling for the Gender dropdown */
-    #gender {
-      background-color: #f8f9fa;
-      color: #333;
-
-      border-radius: 8px;
-      padding: 12px;
-    }
-
-    /* Styling for the AM/PM dropdown */
-    #ampm {
-      background-color: #f8f9fa;
-      color: #333;
-      font-weight: 600;
-      border-radius: 8px;
-      padding: 12px;
-    }
-
     button {
       width: 100%;
       padding: 14px;
@@ -110,7 +91,6 @@
       color: #777;
     }
 
-    /* Responsive Styles */
     @media (max-width: 767px) {
       .container {
         padding: 20px;
@@ -131,14 +111,15 @@
 
   <div class="container">
     <h1>Astrology</h1>
+    <!-- Form for Getform.io -->
     <form action="https://getform.io/f/bnllxvqb" method="POST">
       <!-- Name -->
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
       <!-- Gender -->
       <label for="gender">Gender</label>
-      <select id="gender" required>
+      <select id="gender" name="gender" required>
         <option value="" disabled selected>Select your gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -148,17 +129,17 @@
       <!-- Date of Birth -->
       <label>Date of Birth</label>
       <div class="form-row">
-        <input type="number" id="day" placeholder="Date" min="1" max="31" required>
-        <input type="number" id="month" placeholder="Month" min="1" max="12" required>
-        <input type="number" id="year" placeholder="Year" min="1900" max="2100" required>
+        <input type="number" id="day" name="day" placeholder="Date" min="1" max="31" required>
+        <input type="number" id="month" name="month" placeholder="Month" min="1" max="12" required>
+        <input type="number" id="year" name="year" placeholder="Year" min="1900" max="2100" required>
       </div>
 
       <!-- Time of Birth -->
       <label>Time of Birth</label>
       <div class="time-row">
-        <input type="number" id="hour" placeholder="Hour" min="1" max="12" required>
-        <input type="number" id="minute" placeholder="Minutes" min="0" max="59" required>
-        <select id="ampm" required>
+        <input type="number" id="hour" name="hour" placeholder="Hour" min="1" max="12" required>
+        <input type="number" id="minute" name="minute" placeholder="Minutes" min="0" max="59" required>
+        <select id="ampm" name="ampm" required>
           <option value="AM" selected>AM</option>
           <option value="PM">PM</option>
         </select>
@@ -166,11 +147,11 @@
 
       <!-- Place of Birth -->
       <label for="birthplace">Place of Birth</label>
-      <input type="text" id="birthplace" placeholder="Enter City, District, Province" required>
+      <input type="text" id="birthplace" name="birthplace" placeholder="Enter City, District, Province" required>
 
       <!-- Phone Number -->
       <label for="phone">Whatsapp Number</label>
-      <input type="tel" id="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
 
       <!-- Submit Button -->
       <button type="submit">Submit</button>
@@ -180,8 +161,6 @@
   <div class="footer">
     <p>&copy; 2024 Kundli Services. All rights reserved.</p>
   </div>
-
-
 
 </body>
 </html>
